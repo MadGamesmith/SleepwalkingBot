@@ -1,6 +1,11 @@
 const Discord = require('discord.js');
 const client = new Discord.Client(); 
+<<<<<<< HEAD
 client.login('ODM2NjU5NDgwNjk5NzMxOTY4.YIhN3A.TWxtIUB-xXojoeRvS5a05a88Z0s');
+=======
+const botLogin = process.env.BOT_LOGIN;
+client.login(botLogin);
+>>>>>>> 64c538009ed1e797924b13a40bcced89446b1ead
 
 const instructionsChannel = '<#836688382804885544>';
 
