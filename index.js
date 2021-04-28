@@ -23,9 +23,9 @@ client.on('message', msg => {
 client.on('guildMemberAdd', member => {
     const channel = member.guild.channels.cache.find(ch => ch.name === 'introductions');
     if (!channel) return;
-    channel.send(`Welcome to the server ${member}`);
+    channel.send(`Welcome to the potato land ${member}!`);
     channel.send(`:wave:`);
-    channel.send(`Please read the ` + rulesChannel);
+    channel.send(`Please read the ${rulesChannel} and feel free to introduce yourself.`);
 });
 
   
