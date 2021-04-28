@@ -7,7 +7,7 @@ const client = new Discord.Client({
 const botToken = process.env.BOT_TOKEN;
 client.login(botToken);
 
-const rulesChannel = '<#836688382804885544>';
+const rulesChannel = '<#836662914584805386>';
 
 client.on('ready', readyDiscord); //On login auth. successfull
 function readyDiscord(){
