@@ -1,22 +1,19 @@
 require('dotenv').config();
 const Discord = require('discord.js');
+const express = require('express');
+
 const client = new Discord.Client({
     partials: ["MESSAGE"] //this enables access to messages written before bot login
 }); 
 
 const botToken = process.env.BOT_TOKEN;
-const express = require('express')
-const path = require('path')
-const PORT = process.env.PORT || 5000
-
-express()
-  .use(express.static(path.join(__dirname, 'public')))
-  .set('views', path.join(__dirname, 'views'))
-  .set('view engine', 'ejs')
-  .get('/', (req, res) => res.render('pages/index'))
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
-
 const rulesChannel = '<#836662914584805386>';
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Port: ${ PORT }`);
+});
 
 client.login(botToken);
 
