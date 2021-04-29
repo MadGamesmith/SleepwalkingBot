@@ -5,9 +5,20 @@ const client = new Discord.Client({
 }); 
 
 const botToken = process.env.BOT_TOKEN;
-client.login(botToken);
+const express = require('express')
+const path = require('path')
+const PORT = process.env.PORT || 5000
+
+express()
+  .use(express.static(path.join(__dirname, 'public')))
+  .set('views', path.join(__dirname, 'views'))
+  .set('view engine', 'ejs')
+  .get('/', (req, res) => res.render('pages/index'))
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 const rulesChannel = '<#836662914584805386>';
+
+client.login(botToken);
 
 client.on('ready', readyDiscord); //On login auth. successfull
 function readyDiscord(){
@@ -27,5 +38,7 @@ client.on('guildMemberAdd', member => {
     channel.send(`:wave:`);
     channel.send(`Please read the ${rulesChannel} and feel free to introduce yourself.`);
 });
+
+
 
   
