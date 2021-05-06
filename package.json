@@ -2,10 +2,10 @@
   "name": "discordbot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "madbot.js",
   "scripts": {
-    "start": "node index.js",
-    "devStart": "nodemon index.js"
+    "start": "node madbot.js",
+    "devStart": "nodemon madbot.js"
   },
   "author": "",
   "license": "ISC",
